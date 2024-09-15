@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #eee;
+}
+h1 {
+    text-align: center;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+article {
+    margin: 15px;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 650px;
+    background-color: #222;
+    text-align: center;
+}
