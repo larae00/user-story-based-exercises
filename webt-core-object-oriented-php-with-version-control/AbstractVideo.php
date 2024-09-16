@@ -16,6 +16,6 @@
             return $this->source;
         }
 
-        abstract public function getEmbedCode(): string; //weil für Vimeo und Youtube nicht gleich abstract
+        abstract public function getHTMLCode(): String; //weil für Vimeo und Youtube nicht gleich abstract
     }
 ?>
