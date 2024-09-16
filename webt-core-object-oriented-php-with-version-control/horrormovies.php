@@ -21,7 +21,7 @@
             new YouTubeVideo("Smile 2", "KjRvLYWLP0A?si=f4SDxC5ikeIXgX-A"),
             new YouTubeVideo("M3GAN", "BRb4U99OU80?si=xzqhAIbyxu6CpZvW"),
             new YouTubeVideo("The Visit", "YfQnRjkuvaY?si=hs7tsDIhOR_HTI-k")
-        ]
+        ];
 
         foreach ($videos as $video) {
             echo '<article>';
@@ -31,7 +31,7 @@
             echo '</article>';
         }
 
-        ?>
-        </section>
+    ?>
+    </section>
 </body>
 </html>

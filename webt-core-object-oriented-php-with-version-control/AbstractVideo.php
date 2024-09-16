@@ -1,4 +1,6 @@
 <?php
+    require 'VideoInterface.php';
+
     abstract class AbstractVideo implements VideoInterface {
         protected $name;
         protected $source;
@@ -16,6 +18,6 @@
             return $this->source;
         }
 
-        abstract public function getHTMLCode(): String; //weil für Vimeo und Youtube nicht gleich abstract
+        abstract public function getHTMLCode(): string; //weil für Vimeo und Youtube nicht gleich abstract
     }
 ?>

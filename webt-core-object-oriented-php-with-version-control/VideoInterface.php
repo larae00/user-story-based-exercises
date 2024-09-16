@@ -1,7 +1,7 @@
 <?php
     interface VideoInterface {
-        public function getName(): String;
-        public function getSource(): String;
-        public function getHTMLCode(): String;
+        public function getName(): string;
+        public function getSource(): string;
+        public function getHTMLCode(): string;
     }
 ?>
