@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acolytes of Ash - Trailer Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
@@ -12,8 +12,8 @@
     <section>
 
     <?php 
-        require 'YouTubeVideo.php';   
-        require 'VimeoVideo.php';     
+        require 'src\YouTubeVideo.php';   
+        require 'src\VimeoVideo.php';     
 
         $videos = [
             new YouTubeVideo("Smile - Siehst du es auch?", "VverKvO3CCM?si=TmKdHIuueMKfO2ZP"), 
