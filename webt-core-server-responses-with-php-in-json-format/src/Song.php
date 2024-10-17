@@ -14,15 +14,5 @@
             $this->trackNumber = $trackNumber;
             $this->duration = $duration;
         }
-
-        public function toArray() {
-            return [
-                'id' => $this->id,
-                'name' => $this->name,
-                'artist' => $this->artist,
-                'trackNumber' => $this->trackNumber,
-                'duration' => $this->duration,
-            ];
-        }
     }
 ?>

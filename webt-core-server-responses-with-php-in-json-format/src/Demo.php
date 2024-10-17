@@ -12,8 +12,6 @@ class Demo {
             print_r($OST);
         }
 
-        //header('Content-Type: application/json');
-        //echo json_encode($OSTArrays);
     }
 }
 
