@@ -9,11 +9,11 @@ class Demo {
 
         $OSTArrays = [];
         foreach ($OSTs as $OST) {
-            $OSTArrays[] = $OST->toArray();
+            print_r($OST);
         }
 
-        header('Content-Type: application/json');
-        echo json_encode($OSTArrays);
+        //header('Content-Type: application/json');
+        //echo json_encode($OSTArrays);
     }
 }
 
