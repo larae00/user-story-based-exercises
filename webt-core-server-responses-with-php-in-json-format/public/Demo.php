@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 $OSTs = Seeder::seed();
 
-
+//funktion um nur einen OST mit einer spezifischen id zu bekommen
 function getOSTByID($id, $OSTList) {
     foreach ($OSTList as $OST) {
         if ($OST->getId() == $id) {
@@ -16,7 +16,6 @@ function getOSTByID($id, $OSTList) {
     }
     return null;
 }
-
 
 if (isset($_GET['id']) && isset($_GET['all']) && $_GET['all'] == true) {
     echo json_encode($OSTs);
@@ -30,7 +29,5 @@ if (isset($_GET['id']) && isset($_GET['all']) && $_GET['all'] == true) {
 } else if (isset($_GET['all']) && $_GET['all'] == true) {
     echo json_encode($OSTs);
 } 
-
-
 
 ?>
