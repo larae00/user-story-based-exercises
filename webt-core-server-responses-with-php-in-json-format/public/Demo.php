@@ -18,18 +18,19 @@ function getOSTByID($id, $OSTList) {
 }
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && isset($_GET['all']) && $_GET['all'] == true) {
+    echo json_encode($OSTs);
+} else if (isset($_GET['id'])) {
     $id = intval($_GET['id']);      //intval() konvertiert den GET-Parameter in ein int, sodass z.B. wenn man einen String angibt nur 0 zurückkommt und nicht etwas schädliches ausgeführt werden kann.
     $OST = getOSTByID($id, $OSTs);
 
     if ($OST) {
         echo json_encode($OST);
     }
-}
-
-
-if (isset($_GET['all']) && $_GET['all'] == true) {
+} else if (isset($_GET['all']) && $_GET['all'] == true) {
     echo json_encode($OSTs);
-}
+} 
+
+
 
 ?>
