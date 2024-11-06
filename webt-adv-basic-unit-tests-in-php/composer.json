@@ -1,0 +1,17 @@
+{
+    "name": "lara/advunittests",
+    "description": "advunittests",
+    "autoload": {
+        "psr-4": {
+            "Lara\\Advunittests\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lara Ehart"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    }
+}
