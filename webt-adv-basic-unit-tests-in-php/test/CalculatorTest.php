@@ -10,12 +10,18 @@ class CalculatorTest extends TestCase {
         $this->calculator = new Calculator();
     }
 
+    /**
+     * @covers Calculator::add
+     */
     public function testAdd() {
         $this->assertEquals(5, $this->calculator->add(2, 3), "Addition von 2 und 3 sollte 5 ergeben");
         $this->assertEquals(-1, $this->calculator->add(2, -3));
         $this->assertEquals(0, $this->calculator->add(0, 0));
     }
 
+    /**
+     * @covers Calculator::substract
+     */
     public function testSubstract() {
         
         $this->assertNotNull($this->calculator->substract(5, 10), "Das Ergebnis der Subtraktion sollte nicht null sein");
@@ -24,6 +30,9 @@ class CalculatorTest extends TestCase {
         $this->assertEquals(0, $this->calculator->substract(0, 0));
     }
 
+    /**
+     * @covers Calculator::multiply
+     */
     public function testMultiply() {
         
         $this->assertEquals(10, $this->calculator->multiply(5, 2), "Multiplikation von 5 und 2 sollte 10 ergeben");
