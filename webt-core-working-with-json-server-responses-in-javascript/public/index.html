@@ -4,22 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Registry - Random Office</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    #data-container {
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
   <h1>Lords of the Rings</h1>
 
  
-    <p id="todo-title">Loading...</p>
-    <p id="todo-completed">Loading...</p>
+    <p id="title">Loading...</p>
+    <p id="completed">Loading...</p>
+    <p id="userId">Loading...</p>
+    <p id="id">Loading...</p>
 
 
   <script>
@@ -27,13 +20,12 @@
     fetch('https://jsonplaceholder.typicode.com/todos/1')
       .then(response => response.json())
       .then(data => {
-        
-        const titleElement = document.getElementById('todo-title');
-        const completedElement = document.getElementById('todo-completed');
 
-        
-        titleElement.textContent = `Title: ${data.title}`;
-        completedElement.textContent = `Completed: ${data.completed}`;
+        document.querySelector('#title').innerHTML = 'Title: ' + data.title;
+        document.querySelector('#completed').innerHTML = 'Completed: ' + data.completed;
+        document.querySelector('#userId').innerHTML = 'UserId: ' + data.userId;
+        document.querySelector('#id').innerHTML = 'Id: ' + data.id;
+
       })
     
   </script>
