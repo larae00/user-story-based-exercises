@@ -1,0 +1,7 @@
+RewriteEngine   on
+RewriteRule ^Demo/id/([0-9]+)$ Demo.php?id=$1
+RewriteRule ^Demo/all/(.*)$ Demo.php?all=$1
+#$1 ist für den ersten Treffer von der Regex
+#+ für einmal oder öfter
+#* für null mal oder öfter
+#. für belibiges Zeichen
