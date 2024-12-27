@@ -23,9 +23,9 @@
       })
       .catch(error => console.error('Error fetching data:', error));  //falls ein Error beim fetchen passiert
 
-    document.getElementById('randomButton').addEventListener('click', () => {
+    document.querySelector('#randomButton').addEventListener('click', () => {
       
-      const randomLocation = weddingLocations[Math.floor(Math.random() * weddingLocations.length)]; // random ort bekommen
+      const randomLocation = weddingLocations[Math.floor(Math.random() * weddingLocations.length)]; // random location bekommen
 
       const locationData = randomLocation.properties; //um properties Eigenschaft von objekt zu bekommen
           //ich mach design für die ausgabe mit card von bootstrap
