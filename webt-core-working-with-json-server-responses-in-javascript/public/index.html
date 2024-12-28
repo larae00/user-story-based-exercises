@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Location Finder</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
     <h1 class="my-4">Wedding Location Finder</h1> <!--my-4 für margin oben unten und vier weil so mittlerer abstand-->
     <button id="randomButton" class="btn btn-primary">Get Random Wedding Location</button>
-    <div id="location" class="my-4"></div>  <!--Da kommt dann die Location hin wenn man auf den button drückt-->
+    <div id="location" class="my-4"></div> <!--Da kommt dann die Location hin wenn man auf den button drückt-->
+    <div id="map" class="my-4"></div>
   </div>
-
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     let weddingLocations = [];
+    let map; // Karte wird später initialisiert
+    let marker; // Marker wird später hinzugefügt
+
 
     fetch('https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:TRAUMHOCHZEITOGD&srsName=EPSG:4326&outputFormat=json')
       .then(response => response.json())
@@ -24,11 +38,38 @@
       .catch(error => console.error('Error fetching data:', error));  //falls ein Error beim fetchen passiert
 
     document.querySelector('#randomButton').addEventListener('click', () => {
-      
       const randomLocation = weddingLocations[Math.floor(Math.random() * weddingLocations.length)]; // random location bekommen
-
       const locationData = randomLocation.properties; //um properties Eigenschaft von objekt zu bekommen
-          //ich mach design für die ausgabe mit card von bootstrap
+      const geometryData = randomLocation.geometry;
+      const coordinates = [geometryData.coordinates[1], geometryData.coordinates[0]];
+
+
+      // map anzeigen und erstelln, wenn noch nicht existiert
+      if (!map) {
+        map = L.map("map").setView(coordinates, 15); // Karte erstellen
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      }
+      document.querySelector('#map').style.display = "block";
+
+      // Karte nach Anzeigen aktualisieren
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 200); // kurz warten damit  Leaflet das Div korrekt erkennt, weil wenn nicht wird map nicht gut angezeigt
+
+
+      // Updaten von map und marker
+      map.setView(coordinates, 15);
+      if (marker) {
+        map.removeLayer(marker);
+      }
+      marker = L.marker(coordinates).addTo(map)
+        .bindPopup(`<h5>${locationData.LOCATION}</h5> ${locationData.ADRESSE}`)
+        .openPopup();
+
+
+      //ich mach design für die ausgabe mit card von bootstrap
       const locationHTML = `
         <div class="card">
           <div class="card-body">
@@ -39,9 +80,10 @@
             <p class="card-text"><strong>Website:</strong> <a href="${locationData.WEBLINK1}" target="_blank">${locationData.WEBLINK1}</a></p>
           </div>
         </div>`;
-        
-      document.querySelector('#location').innerHTML = locationHTML
+
+      document.querySelector('#location').innerHTML = locationHTML;
     });
   </script>
 </body>
+
 </html>
