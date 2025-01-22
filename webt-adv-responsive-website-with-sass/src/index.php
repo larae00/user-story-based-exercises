@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acolytes of Ash - Trailer Portal</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
+    <p class="text-center">Acolytes of Ash Trailer Portal</p>
     
     <div class="container">
-    <h1>Acolytes of Ash Trailer Portal</h1>
-    <div class="row">
+        
+        <div class="row">
             <?php 
                 require 'YouTubeVideo.php';   
                 require 'VimeoVideo.php';    
