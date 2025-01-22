@@ -32,7 +32,7 @@
                 foreach ($videos as $video) {
                     echo '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">';
                     echo '<div class="vidcontainer">';
-                    echo '<h3>' . $video->getName() . '</h5>';
+                    echo '<h3>' . $video->getName() . '</h3>';
                     echo '<p>Source: ' . $video->getVideoSource() . '</p>';
                     echo '<div>' . $video->getHTMLCode() . '</div>'; 
                     echo '</div>'; 
