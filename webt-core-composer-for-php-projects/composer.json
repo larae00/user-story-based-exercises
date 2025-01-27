@@ -1,0 +1,18 @@
+{
+    "name": "lara/webt-core-composer-for-php-projects",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lara\\WebtCoreComposerForPhpProjects\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lara Ehart",
+            "email": "1033@htl.rennweg.at"
+        }
+    ],
+    "require": {
+        "endroid/qr-code": "^6.0"
+    }
+}
