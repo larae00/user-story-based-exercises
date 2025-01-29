@@ -23,8 +23,8 @@
     $phoneNumber = '';
     $showQR = false;
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['phoneNumber'])) {
-        $phoneNumber = 'tel:' . $_POST['phoneNumber'];
+    if (isset($_POST['phoneNumber'])) {
+        $phoneNumber = 'tel: ' . htmlspecialchars($_POST['phoneNumber']);
         $showQR = true;
     }
 
