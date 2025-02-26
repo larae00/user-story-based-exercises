@@ -8,7 +8,6 @@ $url = 'webt-adv-twig-templating-engine/public';
 echo $twig->render('index.html.twig', [
     'title' => 'Meine Webseite',
     'headline' => 'Willkommen auf meiner Seite',
-    'name' => 'Lara',
     'content' => 'Dies ist der Hauptinhalt der Seite.',
     'date' => '2025',
     'ich' => 'Lara Ehart',
