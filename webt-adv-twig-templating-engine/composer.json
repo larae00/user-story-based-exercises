@@ -1,0 +1,18 @@
+{
+    "name": "lara/webt-adv-twig-templating-engine",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lara\\WebtAdvTwigTemplatingEngine\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lara Ehart",
+            "email": "1033@htl.rennweg.at"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.20"
+    }
+}
