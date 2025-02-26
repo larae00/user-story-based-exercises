@@ -15,6 +15,10 @@ echo $twig->render('index.html.twig', [
         ['url' => './', 'text' => 'Home'],
         ['url' => './about.php', 'text' => 'Über mich'],
         ['url' => './contact.php', 'text' => 'Kontakt']
+    ],
+    'entities' => [
+        ['name' => 'BG und BRG Stockerau', 'jahr' => '2017-2021'],
+        ['name' => 'HTL Rennweg', 'jahr' => '2021-jetzt'],
     ]
 ]);
 ?>

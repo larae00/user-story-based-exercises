@@ -14,6 +14,10 @@
                 <h1>{{headline}}</h1>
                 <h2>Willkommen!</h2>
                 <p>{{ content }}</p>
+                <h1> Ausbildung </h1>
+                {% for entity in entities %}
+                    {% include 'partials/entity.twig' %}
+                {% endfor %}
             </main>
 
             {% include 'partials/footer.twig' %}
