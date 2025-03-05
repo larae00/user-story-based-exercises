@@ -10,23 +10,13 @@
     <div class="container">
         <h1>{{HEADLINE}}</h1>
         
+        {{#FOREACH hotels}}
         <div class="hotel">
-            <h2>{{HOTEL1_NAME}}</h2>
-            <p>{{HOTEL1_DESCRIPTION}}</p>
-            <p class="price">Preis pro Nacht: {{HOTEL1_PRICE}}</p>
+            <h2>{{name}}</h2>
+            <p>{{description}}</p>
+            <p class="price">Preis pro Nacht: {{price}}</p>
         </div>
-
-        <div class="hotel">
-            <h2>{{HOTEL2_NAME}}</h2>
-            <p>{{HOTEL2_DESCRIPTION}}</p>
-            <p class="price">Preis pro Nacht: {{HOTEL2_PRICE}}</p>
-        </div>
-
-        <div class="hotel">
-            <h2>{{HOTEL3_NAME}}</h2>
-            <p>{{HOTEL3_DESCRIPTION}}</p>
-            <p class="price">Preis pro Nacht: {{HOTEL3_PRICE}}</p>
-        </div>
+        {{#ENDFOREACH}}
     </div>
 </body>
 </html>
