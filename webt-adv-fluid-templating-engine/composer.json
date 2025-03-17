@@ -14,6 +14,6 @@
         }
     ],
     "require": {
-        "typo3/fluid": "^3.0"
+        "typo3fluid/fluid": "^4.0"
     }
 }
