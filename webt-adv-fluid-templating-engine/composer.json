@@ -1,0 +1,19 @@
+{
+    "name": "lara/webt-adv-fluid-templating-engine",
+    "description": "fluid templating engine",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lara\\WebtAdvFluidTemplatingEngine\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lara Ehart",
+            "email": "1033@htl.rennweg.at"
+        }
+    ],
+    "require": {
+        "typo3/fluid": "^3.0"
+    }
+}
