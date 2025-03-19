@@ -1,0 +1,11 @@
+<f:layout name="OneColumn" />
+
+<f:section name="Main">
+    <h1>{headline}</h1>
+    
+    <div class="hotels-grid">
+        <f:for each="{hotels}" as="hotel">
+            <f:render partial="Hotel" arguments="{hotel: hotel}" />
+        </f:for>
+    </div>
+</f:section> 
