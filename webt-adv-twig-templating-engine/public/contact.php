@@ -3,7 +3,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $loader = new \Twig\Loader\FilesystemLoader('../src');
 $twig = new \Twig\Environment($loader);
-$url = 'webt-adv-twig-templating-engine/public';
 
 echo $twig->render('contact.html.twig', [
     'headline1'=> 'Angaben zur Person',
