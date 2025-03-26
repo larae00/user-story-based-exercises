@@ -3,7 +3,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Lara\WebtAdvFluidTemplatingEngine\Model\Hotel;
 
-$view = new \TYPO3Fluid\Fluid\View\TemplateView();
+use TYPO3Fluid\Fluid\View\TemplateView;
+
+$view = new TemplateView();
 
 $paths = $view->getRenderingContext()->getTemplatePaths();
 $paths->setTemplateRootPaths(['../private/templates']);

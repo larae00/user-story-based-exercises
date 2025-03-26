@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$view = new \TYPO3Fluid\Fluid\View\TemplateView();
+use TYPO3Fluid\Fluid\View\TemplateView;
+
+$view = new TemplateView();
 
 $paths = $view->getRenderingContext()->getTemplatePaths();
 $paths->setTemplateRootPaths(['../private/templates']);

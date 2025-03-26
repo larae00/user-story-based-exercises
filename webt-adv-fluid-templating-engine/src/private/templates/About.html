@@ -1,12 +1,13 @@
 <f:layout name="TwoColumn" />
 
 <f:section name="Main">
-    <h1>Über uns</h1>
-    <p>Wir sind Ihr Experte für Luxushotels in Las Vegas.</p>
+    <h1>{headline}</h1>
+    <p>{description}</p>
 </f:section>
 
 <f:section name="Sidebar">
     <h2>Kontakt</h2>
-    <p>Tel: +1 123 456 789</p>
-    <p>Email: info@lasvegas-hotels.com</p>
+    <p>{contact.phone}</p>
+    <p>{contact.email}</p>
+    <p>{contact.address}</p>
 </f:section> 
