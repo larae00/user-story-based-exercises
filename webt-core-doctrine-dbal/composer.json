@@ -1,0 +1,20 @@
+{
+    "name": "lara/webt-core-doctrine-dbal",
+    "description": "doctrine-dbal",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lara\\WebtCoreDoctrineDbal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lara Ehart",
+            "email": "1033@htl.rennweg.at"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^4.2",
+        "twig/twig": "^3.20"
+    }
+}

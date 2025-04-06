@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USARPS Championship Statistik</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>USARPS Championship 2024</h1>
+        <p>Turnierdatum: 15. April 2024</p>
+    </header>
+
+    <div class="game-rounds">
+        {% for game in games %}
+        <div class="game-round">
+            <h3>Spielrunde {{ game.id }}</h3>
+            <p>Spieler: {{ game.playerName }}</p>
+            <p class="symbol">{{ game.symbolEmoji }}</p>
+            <p>Datum: {{ game.gameDate|date('d.m.Y H:i') }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html> 
