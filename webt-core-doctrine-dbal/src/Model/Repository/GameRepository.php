@@ -35,4 +35,14 @@ class GameRepository
         }
         return $games;
     }
+
+    public function addNewGame(array $data): void
+    {
+        $this->connection->insert('game_rounds', [
+            'player_name' => $data['playerName'],
+            'symbol' => $data['symbol'],
+            'game_date' => $data['gameDate']
+        ]);
+    }
+
 } 

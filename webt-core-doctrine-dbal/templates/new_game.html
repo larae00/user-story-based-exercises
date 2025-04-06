@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USARPS Championship Statistik</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>USARPS Championship 2024</h1>
+        <p>Turnierdatum: 15. April 2024</p>
+    </header>
+    
+    <div class="form-container" id="newGameForm">
+        <h2>Neues Spiel hinzufügen</h2>
+        <form action="../public/new_game.php" method="POST">
+            <div class="form-group">
+                <label for="playerName">Spielername:</label>
+                <input type="text" id="playerName" name="playerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="symbol">Symbol:</label>
+                <select id="symbol" name="symbol" required>
+                    <option value="rock">Stein ✊</option>
+                    <option value="paper">Papier ✋</option>
+                    <option value="scissors">Schere ✌️</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button class="add-button" type="submit">Speichern</button>
+                <a href="index.php" class="cancel-link">Abbrechen</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
