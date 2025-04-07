@@ -2,7 +2,8 @@
 
 namespace Lara\WebtCoreDoctrineDbal;
 
-use Lara\WebtCoreDoctrineDbal\Controller\GameController;
+use Lara\WebtCoreDoctrineDbal\Model\Repository\GameRepository;
+
 use Lara\WebtCoreDoctrineDbal\View\TemplateRenderer;
 
 require_once '../vendor/autoload.php';
@@ -16,12 +17,13 @@ $connectionParams = [
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller = new GameController($connectionParams);
-    $controller->saveGame($_POST);
+    $gameRepository = new GameRepository($connectionParams);
+    $gameRepository->addNewGame($_POST);
     header('Location: index.php');
     exit;
 }
-    $templateRenderer = new TemplateRenderer('../templates');
+
+$templateRenderer = new TemplateRenderer('../templates');
 // we render the games with the help of a twig template
 echo $templateRenderer->render(
     'new_game.html'
