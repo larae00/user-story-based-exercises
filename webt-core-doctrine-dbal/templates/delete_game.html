@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiel löschen</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>USARPS Championship 2024</h1>
+        <p>Turnierdatum: 15. April 2024</p>
+    </header>
+    
+    <div class="form-container">
+        <h2>Spiel löschen</h2>
+        <p>Möchten Sie dieses Spiel wirklich löschen?</p>
+        <form action="delete_game.php" method="POST">
+            <input type="hidden" name="id" value="{{ game.id }}">
+            <div class="game-details">
+                <p><strong>Spieler:</strong> {{ game.player_name }}</p>
+                <p><strong>Symbol:</strong> {{ game.symbolEmoji }}</p>
+                <p><strong>Datum:</strong> {{ game.game_date }}</p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Löschen</button>
+                <a href="index.php" class="cancel-link">Abbrechen</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

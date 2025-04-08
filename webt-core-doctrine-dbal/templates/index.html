@@ -21,6 +21,7 @@
             <p>Spieler: {{ game.playerName }}</p>
             <p class="symbol">{{ game.symbolEmoji }}</p>
             <p>Datum: {{ game.gameDate|date('d.m.Y H:i') }}</p>
+            <a href="delete_game.php?id={{ game.id }}" class="btn btn-danger">Löschen</a>
         </div>
         {% endfor %}
     </div>

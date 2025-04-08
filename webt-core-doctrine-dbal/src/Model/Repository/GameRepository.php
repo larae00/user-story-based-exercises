@@ -49,4 +49,34 @@ class GameRepository
             ]);
         }
     }
+
+    public function getGameById(int $id): ?Game
+    {
+        $queryBuilder = $this->connection->createQueryBuilder();
+        $queryBuilder
+            ->select('id', 'player_name', 'symbol', 'game_date')
+            ->from('game_rounds')
+            ->where('id = ?')
+            ->setParameter(0, $id);
+
+        $result = $queryBuilder->executeQuery()->fetchAssociative();
+
+        if (!$result) {
+            return null;
+        }
+
+        return new Game(
+            $result['id'],
+            $result['player_name'],
+            $result['symbol'],
+            new \DateTime($result['game_date'])
+        );
+    }
+
+    public function deleteGame(int $id): void
+    {
+        $this->connection->delete('game_rounds', ['id' => $id]);
+    }
+
+
 } 
