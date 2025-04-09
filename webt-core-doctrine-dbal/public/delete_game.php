@@ -41,12 +41,7 @@ if ($game === null) {
     exit;
 }
 
-echo $templateRenderer->render('delete_game.html', [
-    'game' => [
-        'id' => $game->getId(),
-        'player_name' => $game->getPlayerName(),
-        'symbol' => $game->getSymbol(),
-        'symbolEmoji' => $game->getSymbolEmoji(),
-        'game_date' => $game->getGameDate()->format('Y-m-d H:i:s')
-    ]
-]); 
+echo $templateRenderer->render(
+    'delete_game.html', 
+    array(
+        'game' => $game)); 

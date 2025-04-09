@@ -18,9 +18,9 @@
         <form action="delete_game.php" method="POST">
             <input type="hidden" name="id" value="{{ game.id }}">
             <div class="game-details">
-                <p><strong>Spieler:</strong> {{ game.player_name }}</p>
-                <p><strong>Symbol:</strong> {{ game.symbolEmoji }}</p>
-                <p><strong>Datum:</strong> {{ game.game_date }}</p>
+                <p><strong>Spieler:</strong> {{ game.playerName }}</p>
+                <p><strong>Symbol:</strong> {{ game.symbolEmoji  }}</p>
+                <p><strong>Datum:</strong> {{ game.gameDate|date('d.m.Y H:i')  }}</p>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-danger">Löschen</button>
